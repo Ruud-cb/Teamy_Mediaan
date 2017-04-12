@@ -77,4 +77,44 @@ public class Event implements Serializable {
     public int getCurrentParticipants() {
         return currentParticipants;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
+    }
+
+    public void setStart(Date start) {
+        this.start = start;
+    }
+
+    public void setEnd(Date end) {
+        this.end = end;
+    }
+
+    public void setLocation(EventLocation location) {
+        this.location = location;
+    }
+
+    public void setOrganiser(EventOrganiser organiser) {
+        this.organiser = organiser;
+    }
+
+    public void setMinParticipants(int minParticipants) {
+        this.minParticipants = minParticipants;
+    }
+
+    public void setMaxParticipants(int maxParticipants) {
+        this.maxParticipants = maxParticipants;
+    }
+
+    public void setCurrentParticipants(int currentParticipants) {
+        this.currentParticipants = currentParticipants;
+    }
 }

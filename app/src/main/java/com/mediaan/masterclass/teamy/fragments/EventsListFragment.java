@@ -16,6 +16,7 @@ import com.mediaan.masterclass.teamy.EventDetailActivity;
 import com.mediaan.masterclass.teamy.R;
 import com.mediaan.masterclass.teamy.adapters.EventsAdapter;
 import com.mediaan.masterclass.teamy.pojo.Event;
+import com.mediaan.masterclass.teamy.pojo.EventType;
 import com.mediaan.masterclass.teamy.storage.EventsStorage;
 
 import java.util.List;
@@ -23,22 +24,21 @@ import java.util.List;
 public class EventsListFragment extends Fragment {
 
     private static final int COLUMN_COUNT = 2;
+    private List<Event> events;
+    private EventsAdapter rcAdapter;
+    private  EventsStorage eventsStorage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.content_events, container, false);
         final Context context = getContext();
-
-        final EventsStorage eventsStorage = new EventsStorage(context);
-        final List<Event> events = eventsStorage.getEvents();
-
+        eventsStorage = new EventsStorage(context);//not sure if this is correct, with a context to a field?
         final GridLayoutManager gridLayoutManager = new GridLayoutManager(context, COLUMN_COUNT);
         final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.events_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        final EventsAdapter rcAdapter = new EventsAdapter(context, events, onEventClickedListener);
-        recyclerView.setAdapter(rcAdapter);
+        SetupRecyclerView(view);
 
         return view;
     }
@@ -52,4 +52,32 @@ public class EventsListFragment extends Fragment {
             getActivity().startActivity(intent);
         }
     };
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //test adding event
+        Event event = new Event();
+        event.setTitle("title");
+        event.setDescription("description");
+        event.setType(EventType.BASKETBALL);
+        this.eventsStorage.AddEvent(event);
+        this.events = this.eventsStorage.getEvents();
+        this.rcAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    public void SetupRecyclerView(View view){
+        final Context context = getContext();
+        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.events_list);
+
+        this.events = eventsStorage.getEvents();
+        this.rcAdapter = new EventsAdapter(context, events, onEventClickedListener);
+        recyclerView.setAdapter(rcAdapter);
+    }
+
 }
