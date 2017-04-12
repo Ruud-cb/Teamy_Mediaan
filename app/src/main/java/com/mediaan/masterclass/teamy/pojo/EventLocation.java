@@ -20,4 +20,12 @@ public class EventLocation implements Serializable {
     public double getDistance() {
         return distance;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
 }

@@ -16,9 +16,13 @@ import com.mediaan.masterclass.teamy.EventDetailActivity;
 import com.mediaan.masterclass.teamy.R;
 import com.mediaan.masterclass.teamy.adapters.EventsAdapter;
 import com.mediaan.masterclass.teamy.pojo.Event;
+import com.mediaan.masterclass.teamy.pojo.EventLocation;
+import com.mediaan.masterclass.teamy.pojo.EventOrganiser;
 import com.mediaan.masterclass.teamy.pojo.EventType;
 import com.mediaan.masterclass.teamy.storage.EventsStorage;
+import com.mediaan.masterclass.teamy.utils.DateTimeUtils;
 
+import java.util.Date;
 import java.util.List;
 
 public class EventsListFragment extends Fragment {
@@ -56,14 +60,8 @@ public class EventsListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        //test adding event
-        Event event = new Event();
-        event.setTitle("title");
-        event.setDescription("description");
-        event.setType(EventType.BASKETBALL);
-        this.eventsStorage.AddEvent(event);
         this.events = this.eventsStorage.getEvents();
-        this.rcAdapter.notifyDataSetChanged();
+        this.rcAdapter.setData(this.events);
     }
 
     @Override

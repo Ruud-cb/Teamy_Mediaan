@@ -20,7 +20,7 @@ import java.util.List;
 
 public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewHolder> {
 
-    private final List<Event> events;
+    private List<Event> events;
     private final Context context;
     private final OnItemClickListener onItemClickListener;
 
@@ -68,6 +68,12 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         final EventLocation eventLocation = event.getLocation();
         holder.tvLocation.setText(eventLocation.getName());
         holder.tvLocationDistance.setText(context.getString(R.string.location_distance_format, eventLocation.getDistance()));
+    }
+
+    public void setData(List<Event> events){
+        //simple way to update the list
+        this.events = events;
+        notifyDataSetChanged();
     }
 
     @Override
