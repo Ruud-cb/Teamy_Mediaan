@@ -9,6 +9,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.mediaan.masterclass.teamy.pojo.EventLocation;
+import com.mediaan.masterclass.teamy.pojo.EventType;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +21,29 @@ public class CreateEventActivity extends AppCompatActivity {
     private EditText fromDateEtxt;
     private EditText toDateEtxt;
 
+    private String title;
+    private String description;
+    private EventType eventType;
+    private EventLocation location;
     private DatePickerDialog fromDatePickerDialog;
     private DatePickerDialog toDatePickerDialog;
-
     private SimpleDateFormat dateFormatter;
+
+    public String getEventTitle() {
+        return ((EditText) findViewById(R.id.create_title)).getText().toString();
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public EventType getEventType() {
+        return eventType;
+    }
+
+    public EventLocation getLocation() {
+        return location;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
