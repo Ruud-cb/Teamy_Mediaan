@@ -15,6 +15,7 @@ import com.mediaan.masterclass.teamy.adapters.NavigationAdapter;
 public class MainActivity extends BaseActivity {
 
     private Toolbar toolbar;
+
     private View.OnClickListener onFabClicked = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
