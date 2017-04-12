@@ -13,6 +13,7 @@ import com.mediaan.masterclass.teamy.pojo.Event;
 import com.mediaan.masterclass.teamy.pojo.EventLocation;
 import com.mediaan.masterclass.teamy.pojo.EventOrganiser;
 import com.mediaan.masterclass.teamy.pojo.EventType;
+import com.mediaan.masterclass.teamy.storage.UserStorage;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -33,7 +34,8 @@ public class CreateEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
-
+        UserStorage storage = new UserStorage();
+        
         fromDateEtxt = (EditText) findViewById(R.id.create_begin_date);
         toDateEtxt = (EditText) findViewById(R.id.create_end_date);
 
