@@ -119,7 +119,11 @@ public class CreateEventActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                try {
+                    CreateEvent();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -150,5 +154,6 @@ public class CreateEventActivity extends AppCompatActivity {
         event.setLocation(getLocation());
         EventsStorage storage = new EventsStorage(getBaseContext());
         storage.AddEvent(event);
+        finish();
     }
 }
