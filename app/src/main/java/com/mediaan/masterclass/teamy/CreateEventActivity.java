@@ -17,7 +17,6 @@ import com.mediaan.masterclass.teamy.pojo.EventOrganiser;
 import com.mediaan.masterclass.teamy.pojo.EventType;
 import com.mediaan.masterclass.teamy.storage.EventsStorage;
 import com.mediaan.masterclass.teamy.storage.UserStorage;
-import com.mediaan.masterclass.teamy.utils.DateTimeUtils;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -144,10 +143,10 @@ public class CreateEventActivity extends AppCompatActivity {
         String endDate = toDateEtxt.getText().toString();
         DateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
         Date date = format.parse(startDate);
-        date.setTime(100);
+        date.setTime(date.getTime() + 36000000);
         event.setStart(date);
         Date date2 = format.parse(endDate);
-        date2.setTime(100);
+        date2.setTime(date2.getTime() + 54000000);
         event.setEnd(date2);
         EventOrganiser organiser = userStorage.GetCurrentUser();
         event.setOrganiser(organiser);
