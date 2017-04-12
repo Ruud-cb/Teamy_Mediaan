@@ -7,10 +7,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
-
-import com.mediaan.masterclass.teamy.pojo.EventLocation;
-import com.mediaan.masterclass.teamy.pojo.EventType;
 
 import com.mediaan.masterclass.teamy.pojo.Event;
 import com.mediaan.masterclass.teamy.pojo.EventLocation;
@@ -42,14 +40,23 @@ public class CreateEventActivity extends AppCompatActivity {
     }
 
     public String getDescription() {
-        return description;
+        return ((EditText) findViewById(R.id.create_description)).getText().toString();
     }
 
     public EventType getEventType() {
-        return eventType;
+        EventType type = (EventType) ((Spinner) findViewById(R.id.create_event_type)).getSelectedItem();
+
+        return type;
     }
 
     public EventLocation getLocation() {
+        String name = ((EditText) findViewById(R.id.create_location)).getText().toString();
+        double distance = ((SeekBar) findViewById(R.id.create_distance)).getProgress();
+
+        EventLocation location = new EventLocation();
+        location.setDistance(distance);
+        location.setName(name);
+
         return location;
     }
 
@@ -76,13 +83,13 @@ public class CreateEventActivity extends AppCompatActivity {
             }
         }, 2017, 4, 14);
 
-        List<String> spinnerArray = new ArrayList<String>();
-        spinnerArray.add("SOCCER");
-        spinnerArray.add("TABLETENNIS");
-        spinnerArray.add("CYCLING");
+        List<EventType> eventTypes = new ArrayList<>();
+        for (EventType type : EventType.values()) {
+            eventTypes.add(type);
+        }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_spinner_item, spinnerArray);
+        ArrayAdapter<EventType> adapter = new ArrayAdapter<EventType>(
+                this, android.R.layout.simple_spinner_item, eventTypes);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner sItems = (Spinner) findViewById(R.id.create_event_type);
