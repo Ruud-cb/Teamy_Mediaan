@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Mediaan Masterclass 2017 - Teamy - 5. AddEvent.iml" filepath="$PROJECT_DIR$/Mediaan Masterclass 2017 - Teamy - 5. AddEvent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Teamy_Mediaan.iml" filepath="$PROJECT_DIR$/Teamy_Mediaan.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
