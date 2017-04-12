@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_event_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:id="@+id/detail_event_btn_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/detail_event_btn_invite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/dark_grey"
+            android:text="@string/detail_invite_friends"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/detail_event_btn_join"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/dark_green"
+            android:text="@string/detail_join"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detail_event_organiser_participants_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/event_detail_bar_height"
+        android:layout_above="@id/detail_event_btn_bar"
+        android:background="@drawable/backrgound_bordered"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/event_detail_avatar_size"
+                android:layout_height="@dimen/event_detail_avatar_size"
+                android:src="@drawable/avatar_demo" />
+
+            <TextView
+                android:id="@+id/detail_event_organiser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="Pieter Otten" />
+
+            <LinearLayout
+                android:id="@+id/detail_event_medal_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/border_size"
+            android:layout_height="match_parent"
+            android:background="@color/light_grey" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/detail_event_capacity_headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:textAllCaps="true"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="3 available"
+                tools:textColor="@color/participants_orange" />
+
+            <ImageView
+                android:id="@+id/detail_event_capacity_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/event_detail_participants_bar_height"
+                android:layout_below="@id/detail_event_capacity_headline"
+                android:layout_marginBottom="2dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/bar_hor_50" />
+
+            <TextView
+                android:id="@+id/detail_event_capacity_current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/detail_event_capacity_bar"
+                android:layout_alignStart="@id/detail_event_capacity_bar"
+                android:layout_below="@id/detail_event_capacity_bar"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="5/8"
+                tools:textColor="@color/participants_orange" />
+
+            <TextView
+                android:id="@+id/detail_event_capacity_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/detail_event_capacity_bar"
+                android:layout_alignRight="@id/detail_event_capacity_bar"
+                android:layout_below="@id/detail_event_capacity_bar"
+                android:textAllCaps="true"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Min 6 | max 8"
+                tools:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/detail_event_participants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_event_capacity_total"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAllCaps="true"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                android:text="@string/detail_participants_demo"
+                tools:textColor="@color/black" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detail_event_datetime_location_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/event_detail_bar_height"
+        android:layout_above="@id/detail_event_organiser_participants_bar"
+        android:layout_marginBottom="-1dp"
+        android:background="@drawable/backrgound_bordered"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/event_detail_icon_size"
+                android:layout_height="@dimen/event_detail_icon_size"
+                android:src="@drawable/icon_time" />
+
+            <TextView
+                android:id="@+id/detail_event_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                tools:text="Friday | July 15 2016" />
+
+            <TextView
+                android:id="@+id/detail_event_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="20:30 - 22:00" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/border_size"
+            android:layout_height="match_parent"
+            android:background="@color/light_grey" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/event_detail_icon_size"
+                android:layout_height="@dimen/event_detail_icon_size"
+                android:src="@drawable/icon_location" />
+
+            <TextView
+                android:id="@+id/detail_event_location_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                tools:text="Cruijf veld heerlen" />
+
+            <TextView
+                android:id="@+id/detail_event_location_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="0,5 km from you" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/detail_event_type"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:transitionName="@string/detail_icon_transition_name"
+        tools:src="@drawable/ic_soccer" />
+
+    <TextView
+        android:id="@+id/detail_event_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_event_type"
+        android:layout_margin="16dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Soccer match, 4x4, just for the fun and of course some YOLO" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/detail_event_datetime_location_bar"
+        android:layout_below="@id/detail_event_title"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:scrollbarStyle="outsideOverlay">
+
+        <TextView
+            android:id="@+id/detail_event_description"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textColor="@color/dark_grey"
+            android:textSize="14sp"
+            tools:text="The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee." />
+    </ScrollView>
+</RelativeLayout>

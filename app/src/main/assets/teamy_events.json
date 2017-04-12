@@ -1,0 +1,130 @@
+{
+	"events": [
+		{ 
+			"title": "Soccer match: 4 vs 4, just for fun",
+			"description": "The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.",
+			"type": 0,
+			"start": "2017-07-14T20:30:00Z",
+			"end": "2017-07-14T21:30:00Z",
+			"location": {
+				"name": "Cruijf veld Heerlen",
+				"distance": 0.5
+			},
+			"organiser": {
+				"name": "John Peterson",
+				"score": 4
+			},
+			"minParticipants": 8,
+			"maxParticipants": 8,
+			"currentParticipants": 5
+		},
+		{ 
+			"title": "Table tennis tournament on 2 tables",
+			"description": "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
+			"type": 1,
+			"start": "2017-07-14T19:45:00Z",
+			"end": "2017-07-14T20:15:00Z",
+			"location": {
+				"name": "Dr. Weverlaan",
+				"distance": 1.0
+			},
+			"organiser": {
+				"name": "Sharon Mccain",
+				"score": 5
+			},
+			"minParticipants": 4,
+			"maxParticipants": 6,
+			"currentParticipants": 4
+		},
+		{ 
+			"title": "Free basketball try-out for new players",
+			"description": "You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.",
+			"type": 2,
+			"start": "2017-07-14T19:00:00Z",
+			"end": "2017-07-14T20:30:00Z",
+			"location": {
+				"name": "BV The Goats Brunssum",
+				"distance": 3.5
+			},
+			"organiser": {
+				"name": "Peter Smith",
+				"score": 3
+			},
+			"minParticipants": 8,
+			"maxParticipants": 16,
+			"currentParticipants": 3
+		},
+		{ 
+			"title": "Cycling with a small group from Heerlen to any other city as long as its name is long",
+			"description": "Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.",
+			"type": 3,
+			"start": "2017-07-14T18:30:00Z",
+			"end": "2017-07-14T20:30:00Z",
+			"location": {
+				"name": "Parking Aambos Noord",
+				"distance": 0.2
+			},
+			"organiser": {
+				"name": "Lewis Grace",
+				"score": 1
+			},
+			"minParticipants": 2,
+			"maxParticipants": 10,
+			"currentParticipants": 10
+		},
+		{ 
+			"title": "Tennis tournament for IT organizations",
+			"description": "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.",
+			"type": 4,
+			"start": "2017-07-15T21:00:00Z",
+			"end": "2017-07-15T22:00:00Z",
+			"location": {
+				"name": "Mediaan",
+				"distance": 0.0
+			},
+			"organiser":  {
+				"name": "Good Guy",
+				"score": 5
+			},
+			"minParticipants": 12,
+			"maxParticipants": 20,
+			"currentParticipants": 4
+		},
+		{ 
+			"title": "Golf tournament for midgets",
+			"description": "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people. Like pit bulls. The dog of dogs. Pit bull can be the right man's best friend... or the wrong man's worst enemy. You going to give me a dog for a pet, give me a pit bull. Give me... Raoul. Right, Omar? Give me Raoul.",
+			"type": 5,
+			"start": "2017-07-15T19:30:00Z",
+			"end": "2017-07-15T21:00:00Z",
+			"location": {
+				"name": "Pannenkoekenhuis Steinerbos",
+				"distance": 18.7
+			},
+			"organiser": {
+				"name": "Mr. Knife",
+				"score": 2
+			},
+			"minParticipants": 6,
+			"maxParticipants": 10,
+			"currentParticipants": 9
+		},
+		{
+			"title": "Golf tournament for adults",
+			"description": "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people. Like pit bulls. The dog of dogs. Pit bull can be the right man's best friend... or the wrong man's worst enemy. You going to give me a dog for a pet, give me a pit bull. Give me... Raoul. Right, Omar? Give me Raoul.",
+			"type": 5,
+			"start": "2017-07-15T19:30:00Z",
+			"end": "2017-07-15T21:00:00Z",
+			"location": {
+				"name": "Pannenkoekenhuis Steinerbos",
+				"distance": 18.7
+			},
+			"organiser": {
+				"name": "Mr. Knifer",
+				"score": 4
+			},
+			"minParticipants": 8,
+			"maxParticipants": 10,
+			"currentParticipants": 3
+		}
+	]
+}

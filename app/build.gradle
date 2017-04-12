@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+ext {
+    supportVersion = '25.2.0'
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.mediaan.masterclass.teamy"
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:${supportVersion}"
+    compile "com.android.support:design:${supportVersion}"
+
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.okio:okio:1.8.0'
+}

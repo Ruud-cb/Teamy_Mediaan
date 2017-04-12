@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="@drawable/backrgound_bordered"
+    android:background="@drawable/green_ripple"
+    tools:background="@color/dark_grey"
+    tools:layout_height="200dp"
+    tools:layout_width="200dp">
+
+    <TextView
+        android:id="@+id/item_event_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green"
+        android:maxLines="1"
+        android:padding="4dp"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        tools:text="20:30" />
+
+    <ImageView
+        android:id="@+id/item_event_type"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:transitionName="@string/detail_icon_transition_name"
+        tools:src="@drawable/ic_soccer" />
+
+    <TextView
+        android:id="@+id/item_event_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_event_type"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Soccer match, 4x4, just for the fun and of course some YOLO" />
+
+    <TextView
+        android:id="@+id/item_event_capacity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/item_event_title"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        android:gravity="right"
+        tools:text="3/10"
+        tools:textColor="@color/participants_red" />
+
+    <LinearLayout
+        android:id="@+id/item_event_bottom_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_event_capacity_text"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="4dp"
+        android:layout_toLeftOf="@id/item_event_capacity_text"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_event_organiser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/dark_green"
+            android:textSize="14sp"
+            tools:text="Pieter Otten" />
+
+        <TextView
+            android:id="@+id/item_event_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/dark_grey"
+            android:textSize="13sp"
+            tools:text="Die ene straat"
+            tools:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/item_event_location_distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/dark_grey"
+            android:textSize="11sp"
+            tools:text="13,37 km"
+            tools:textColor="@color/black" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/item_event_capacity_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/item_event_bottom_info"
+        android:layout_alignLeft="@id/item_event_capacity_text"
+        android:layout_alignRight="@id/item_event_capacity_text"
+        android:layout_alignTop="@id/item_event_bottom_info"
+        android:layout_below="@id/item_event_capacity_text"
+        android:maxHeight="20dp"
+        android:paddingTop="6dp"
+        tools:src="@drawable/bar_25" />
+</RelativeLayout>

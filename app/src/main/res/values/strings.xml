@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Teamy</string>
+
+    <string name="action_menu">Menu</string>
+    <string name="action_back">Back</string>
+    <string name="action_search">Search</string>
+    <string name="action_filter">Filter</string>
+    <string name="action_not_implemented">%1$s isn\'t implemented yet…</string>
+
+    <string name="participants_format">%1$d/%2$d</string>
+    <string name="location_distance_format">%1$.1fkm</string>
+
+    <string name="hint_new_event">You could add a new page here adding an event :)</string>
+
+    <string name="detail_icon_transition_name">icon_transition</string>
+    <string name="detail_time_format">%1$s - %2$s</string>
+    <string name="detail_date_format">EEEE | MMMM dd yyyy</string>
+    <string name="detail_location_distance_format">%1$.1f km from you</string>
+    <string name="detail_capacity_headline_format">%1$d available</string>
+    <string name="detail_capacity_current_format">%1$d/%2$d</string>
+    <string name="detail_capacity_total_format">Min %1$d | Max %2$d</string>
+    <string name="detail_participants_format">%1$s and %2$d others</string>
+    <string name="detail_participants_demo">John Peter, Will baker and 3 others</string>
+    <string name="detail_invite_friends">Invite friends</string>
+    <string name="detail_join">Join</string>
+    <string name="detail_invite_friends_clicked">You could add a popup here to invite friends :)</string>
+    <string name="detail_join_clicked">You\'ve joined this event, how sporty! :)</string>
+</resources>
