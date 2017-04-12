@@ -1,5 +1,6 @@
 package com.mediaan.masterclass.teamy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -14,6 +15,14 @@ import com.mediaan.masterclass.teamy.adapters.NavigationAdapter;
 public class MainActivity extends BaseActivity {
 
     private Toolbar toolbar;
+    private View.OnClickListener onFabClicked = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this, CreateEventActivity.class);
+            //showSnackbar(view, getString(R.string.hint_new_event));
+            startActivity(intent);
+        }
+    };
 
     @SuppressWarnings("ConstantConditions")
     @Override
@@ -57,12 +66,4 @@ public class MainActivity extends BaseActivity {
         }
         return true;
     }
-
-    private View.OnClickListener onFabClicked = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            // TODO: Implement a new screen to add an event
-            showSnackbar(view, getString(R.string.hint_new_event));
-        }
-    };
 }

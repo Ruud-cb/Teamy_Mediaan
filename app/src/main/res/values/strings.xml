@@ -25,4 +25,5 @@
     <string name="detail_join">Join</string>
     <string name="detail_invite_friends_clicked">You could add a popup here to invite friends :)</string>
     <string name="detail_join_clicked">You\'ve joined this event, how sporty! :)</string>
+    <string name="create_title">Create Event</string>
 </resources>
