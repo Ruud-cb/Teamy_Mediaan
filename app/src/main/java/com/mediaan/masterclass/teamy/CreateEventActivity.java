@@ -16,12 +16,17 @@ import com.mediaan.masterclass.teamy.pojo.Event;
 import com.mediaan.masterclass.teamy.pojo.EventLocation;
 import com.mediaan.masterclass.teamy.pojo.EventOrganiser;
 import com.mediaan.masterclass.teamy.pojo.EventType;
+import com.mediaan.masterclass.teamy.storage.EventsStorage;
 import com.mediaan.masterclass.teamy.storage.UserStorage;
+import com.mediaan.masterclass.teamy.utils.DateTimeUtils;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class CreateEventActivity extends AppCompatActivity {
 
@@ -104,25 +109,30 @@ public class CreateEventActivity extends AppCompatActivity {
     }
 
 
-    private void CreateEvent(){
+    private void CreateEvent() throws ParseException {
         //test adding event
+        UserStorage userStorage = new UserStorage();
+
         Event event = new Event();
-        event.setTitle("title");
-        event.setDescription("description");
-        event.setType(EventType.BASKETBALL);
+        event.setTitle(getEventTitle());
+        event.setDescription(getDescription());
+        event.setType(getEventType());
         event.setCurrentParticipants(1);
-        Date date = new Date();
+        event.setMinParticipants(4);
+        event.setMaxParticipants(10);
+        String startDate = fromDateEtxt.getText().toString();
+        String endDate = toDateEtxt.getText().toString();
+        DateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+        Date date = format.parse(startDate);
         date.setTime(100);
         event.setStart(date);
-        date.setTime(200);
-        event.setEnd(date);
-        EventOrganiser organiser = new EventOrganiser();
-        organiser.setName("Ruud");
-        organiser.setScore(99);
+        Date date2 = format.parse(endDate);
+        date2.setTime(100);
+        event.setEnd(date2);
+        EventOrganiser organiser = userStorage.GetCurrentUser();
         event.setOrganiser(organiser);
-        EventLocation location = new EventLocation();
-        location.setName("Mediaan Office");
-        location.setDistance(0.1);
-        event.setLocation(location);
+        event.setLocation(getLocation());
+        EventsStorage storage = new EventsStorage(getBaseContext());
+        storage.AddEvent(event);
     }
 }
