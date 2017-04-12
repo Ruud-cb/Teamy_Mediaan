@@ -62,6 +62,12 @@ public class EventsStorage {
         }
     }
 
+    public void AddEvent(Event event){
+        List<Event> events = getEvents();
+        events.add(event);
+        saveEventsList(events);
+    }
+
     public void saveEventsList(@NonNull final List<Event> eventList) {
         JsonObject base = new JsonObject();
         base.add(EventConstants.LIST, gson.toJsonTree(eventList));
